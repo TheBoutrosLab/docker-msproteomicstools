@@ -7,12 +7,13 @@ FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 ARG CONDA_ENV_PATH
 ARG MSPROTEOMICSTOOLS_VERSION=0.11.0
 ARG MSPROTEOMICSTOOLS_BUILD=py27h8b767f7_4
-ARG PYTHON_VERSION=2.7.18
+ARG PYTHON_VERSION=2.7.15
 
 # Bioconda's released TRIC package requires Python 2.7 and linux/amd64.
+# Flexible priority allows Bioconda pymzML 0.7.8 despite newer conda-forge builds.
 # PyYAML supports TRIC's --out_meta output but is absent from the package recipe.
 RUN mamba create -qy -p "${CONDA_ENV_PATH}" \
-    --override-channels --strict-channel-priority \
+    --override-channels --channel-priority flexible \
     -c conda-forge -c bioconda \
     "python=${PYTHON_VERSION}" \
     "msproteomicstools=${MSPROTEOMICSTOOLS_VERSION}=${MSPROTEOMICSTOOLS_BUILD}" \

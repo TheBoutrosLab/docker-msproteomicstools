@@ -13,7 +13,7 @@ peak-group tables. OpenSWATH extraction and PyProphet scoring run in separate im
 | Component | Version |
 |-----------|---------|
 | msproteomicstools | 0.11.0 (Bioconda build `py27h8b767f7_4`) |
-| Python | 2.7.18 |
+| Python | 2.7.15 |
 | Miniforge | 26.1.1-2 |
 | Ubuntu | 24.04 |
 

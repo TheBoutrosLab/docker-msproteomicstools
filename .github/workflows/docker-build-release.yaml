@@ -31,6 +31,6 @@ jobs:
       packages: write
     steps:
       - uses: TheBoutrosLab/tool-Docker-action@v2
-      # Uncomment if you expect to use non-SemVer release tags
-      # with:
-      #   non-semver-tags: true
+        with:
+          # Bioconda provides msproteomicstools 0.11.0 for linux/amd64 only.
+          platforms: linux/amd64
